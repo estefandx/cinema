@@ -16,7 +16,7 @@ class CrearTablaSalas extends Migration
         schema::create('Salas', function (Blueprint $table) {
             $table->increments('sala_id');
             $table->string('nombre');
-            $table->integer("Numero_sillas")->unsigned();
+            $table->integer("numero_sillas")->unsigned();
 
         });
     }

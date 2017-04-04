@@ -10,6 +10,7 @@ class TipoUsuario extends Model
     use Notifiable;
     protected $table = 'Tipo_usuario';
     protected $primaryKey = "tipo_usuario_id";
+    public     $timestamps = false;
 
 
     //relacion para  los usuarios de un tipo de perfil

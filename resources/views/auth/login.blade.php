@@ -36,7 +36,10 @@
 
 
                 <div class="form-group">
-                    <button class="btn btn-success btn-md btn-block">Register</button>
+                    <button class="btn btn-success btn-md btn-block">Iniciar</button>
+                    <a class="btn btn-link" href="{{ url('/password/reset') }}">
+                        Olvidates tu Password?
+                    </a>
                 </div>
             </fieldset>
         </form>

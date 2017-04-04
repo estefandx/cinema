@@ -60,7 +60,7 @@
 
 
                 <div class="form-group">
-                    <button class="btn btn-success btn-md btn-block">Register</button>
+                    <button class="btn btn-success btn-md btn-block">Registrarme</button>
                 </div>
             </fieldset>
         </form>

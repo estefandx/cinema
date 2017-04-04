@@ -10,6 +10,7 @@ class Pelicula extends Model
     use Notifiable;
     protected $table = 'Peliculas';
     protected $primaryKey = "pelicula_id";
+    public     $timestamps = false;
 
     public function Genero()
     {

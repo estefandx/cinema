@@ -56,15 +56,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+            <a class="navbar-brand" href="{{ url('/') }}">Cinema<img src="images/cine.png" alt="logo" height="27px"></a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="index.html">Home</a></li>
+                <li class="active"><a href="index.htm">Home</a></li>
                 <li><a href="about-us.html">About Us</a></li>
                 <li><a href="services.html">Services</a></li>
                 @if (Auth::guest())
-                <li><a href="{{ url('/login') }}">Iniciar sesion</a></li>
+                     <li><a href="{{ url('/login') }}">Iniciar sesion</a></li>
                     <li><a href="{{ url('/register') }}">Registrarme</a></li>
                 @else
                     <li class="dropdown">
