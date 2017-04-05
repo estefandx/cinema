@@ -17,6 +17,7 @@ class CrearTablaPeliculas extends Migration
             $table->increments('pelicula_id');
             $table->string('nombre');
             $table->string('url_imagen');
+            $table->string('duracion');
             $table->text('sinopsis');
             $table->integer("genero_id")->unsigned()->nullable();
 

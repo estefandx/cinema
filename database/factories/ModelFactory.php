@@ -53,6 +53,7 @@ $factory->define(App\Pelicula::class, function (Faker\Generator $faker) {
         'nombre' => $faker->name,
         'url_imagen' => $faker->imageUrl('160', '240'),
         'sinopsis' => $faker->text($maxNbChars = 150),
+        'duracion' => $faker->numberBetween($min = 100, $max = 180),
         'genero_id' => $faker->numberBetween($min = 1, $max = 9),
 
     ];

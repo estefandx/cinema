@@ -17,4 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//rutas para la tabla usuarios
+Route::resource('pelicula', 'PeliculaController');
+
 Route::get('/home', 'HomeController@index');

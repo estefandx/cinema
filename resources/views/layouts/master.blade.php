@@ -27,23 +27,23 @@
 
 
 
-    <script src="js/respond.min.js"></script>
+   <!-- <script src="js/respond.min.js"></script>-->
     <script type="text/javascript" src="{{ URL::asset('js/respond.min.js') }}"></script>
     <![endif]-->
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <!--<link rel="shortcut icon" href="images/ico/favicon.ico">-->
     <link rel="stylesheet" href="{{ URL::asset('images/ico/favicon.ico') }}">
 
 
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">-->
     <link rel="stylesheet" href="{{ URL::asset('images/ico/apple-touch-icon-144-precomposed.png') }}">
 
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <!--<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">-->
     <link rel="stylesheet" href="{{ URL::asset('images/ico/apple-touch-icon-114-precomposed.png') }}">
 
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+   <!-- <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">-->
     <link rel="stylesheet" href="{{ URL::asset('images/ico/apple-touch-icon-72-precomposed.png') }}">
 
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+   <!-- <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">-->
     <link rel="stylesheet" href="{{ URL::asset('images/ico/apple-touch-icon-57-precomposed.png') }}">
 </head><!--/head-->
 <body>
@@ -60,9 +60,9 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="index.htm">Home</a></li>
+                <li class="active"><a href="{{ url('/')}}">Home</a></li>
                 <li><a href="about-us.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
+                <li><a href="{{ url('/pelicula') }}">Cartelera</a></li>
                 @if (Auth::guest())
                      <li><a href="{{ url('/login') }}">Iniciar sesion</a></li>
                     <li><a href="{{ url('/register') }}">Registrarme</a></li>
