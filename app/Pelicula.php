@@ -12,6 +12,10 @@ class Pelicula extends Model
     protected $primaryKey = "pelicula_id";
     public     $timestamps = false;
 
+    protected $fillable = [
+        'nombre', 'sinopsis', 'url_imagen', 'duracion','genero_id',
+    ];
+
     public function Genero()
     {
         return  $this->belongsTo(Genero::class);

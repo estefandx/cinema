@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Pelicula;
+use App\Genero;
+use Illuminate\Support\Facades\Input;
 
 class PeliculaController extends Controller
 {
@@ -28,7 +30,8 @@ class PeliculaController extends Controller
      */
     public function create()
     {
-        //
+        $generos = Genero::all();
+        return view('peliculas.create',compact('generos'));
     }
 
     /**
@@ -39,7 +42,21 @@ class PeliculaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $file = Input::file('imagen');
+        $aleatorio = str_random(10);
+        $nombre = $aleatorio.$file->getClientOriginalName();
+        //$file->move('peliculas',$nombre);
+        \Storage::disk('local')->put($nombre,  \File::get($file));
+
+        Pelicula::create([
+           'nombre' => $request['nombre'],
+            'sinopsis' => $request['sinopsis'],
+            'duracion' =>$request['duracion'],
+            'url_imagen' => $nombre,
+            'genero_id' => $request['genero_id'],
+        ]);
+
+        redirect('/pelicula');
     }
 
     /**

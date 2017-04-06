@@ -1,6 +1,22 @@
 @extends('layouts.master')
 
 @section('contenido')
+    <section id="title" class="emerald">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>Peliculas</h1>
+                    <p>Disfruta de las mejores peliculas y mira sus horarios y funciones</p>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="breadcrumb pull-right">
+                        <li><a href="{{ url('/') }}">Home</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section><!--/#title-->
 
 
 
@@ -11,7 +27,7 @@
                     @foreach($peliculas as $pelicula)
                     <div class="row">
                         <div class="col-lg-4">
-                            <img  src="{{$pelicula->url_imagen}}" alt="Generic placeholder image" width="200" height="260">
+                            <img  src="peliculas/{{$pelicula->url_imagen}}" alt="Generic placeholder image" width="200" height="260">
                         </div><!-- /.col-lg-12 -->
                         <div class="col-lg-8">
 

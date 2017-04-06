@@ -56,7 +56,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ url('/') }}">Cinema<img src="images/cine.png" alt="logo" height="27px"></a>
+            <a class="navbar-brand" href="{{ url('/') }}">Cinema<img src={{ url('images/cine.png') }} alt="logo" height="27px"></a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
