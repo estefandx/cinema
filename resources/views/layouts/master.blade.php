@@ -1,136 +1,178 @@
+
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Home | Flat Theme</title>
-   <!-- <link href="css/bootstrap.min.css" rel="stylesheet">-->
-    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css') }}">
-
-
-  <!--  <link href="css/font-awesome.min.css" rel="stylesheet">-->
-    <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css') }}">
-
-
-   <!-- <link href="css/prettyPhoto.css" rel="stylesheet"> -->
-    <link rel="stylesheet" href="{{ URL::asset('css//prettyPhoto.css') }}">
-
-    <!--<link href="css/animate.css" rel="stylesheet">-->
-    <link rel="stylesheet" href="{{ URL::asset('css/animate.css') }}">
-
-
-   <!-- <link href="css/main.css" rel="stylesheet">-->
-    <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
-    <!--[if lt IE 9]>
-
-
-
-   <!-- <script src="js/respond.min.js"></script>-->
-    <script type="text/javascript" src="{{ URL::asset('js/respond.min.js') }}"></script>
-    <![endif]-->
-    <!--<link rel="shortcut icon" href="images/ico/favicon.ico">-->
-    <link rel="stylesheet" href="{{ URL::asset('images/ico/favicon.ico') }}">
-
-
-    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">-->
-    <link rel="stylesheet" href="{{ URL::asset('images/ico/apple-touch-icon-144-precomposed.png') }}">
-
-    <!--<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">-->
-    <link rel="stylesheet" href="{{ URL::asset('images/ico/apple-touch-icon-114-precomposed.png') }}">
-
-   <!-- <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">-->
-    <link rel="stylesheet" href="{{ URL::asset('images/ico/apple-touch-icon-72-precomposed.png') }}">
-
-   <!-- <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">-->
-    <link rel="stylesheet" href="{{ URL::asset('images/ico/apple-touch-icon-57-precomposed.png') }}">
-</head><!--/head-->
+    <title>Cinema A Entertainment Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
+   <!-- <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />-->
+    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.css') }}">
+    <!-- Custom Theme files -->
+   <!-- <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />-->
+    <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
+    <!-- Custom Theme files -->
+   <!-- <script src="js/jquery.min.js"></script>-->
+    <link rel="stylesheet" href="{{ URL::asset('js/jquery.css') }}">
+    <!-- Custom Theme files -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Cinema Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--webfont-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+</head>
 <body>
-<header class="navbar navbar-inverse navbar-fixed-top wet-asphalt" role="banner">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{{ url('/') }}">Cinema<img src={{ url('images/cine.png') }} alt="logo" height="27px"></a>
-        </div>
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="{{ url('/')}}">Home</a></li>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="{{ url('/pelicula') }}">Cartelera</a></li>
-                @if (Auth::guest())
-                     <li><a href="{{ url('/login') }}">Iniciar sesion</a></li>
-                    <li><a href="{{ url('/register') }}">Registrarme</a></li>
-                @else
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->nombre }} <i class="icon-angle-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="{{ url('/logout') }}"
-                                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    Salir
-                                </a>
+<!-- header-section-starts -->
+<div class="full">
+    <div class="menu">
+        <ul>
+            <li><a href="videos.html"><div class="video"><i class="videos"></i><i class="videos1"></i></div></a></li>
+            <li><a class="active" href="index.html"><i class="home"></i></a></li>
 
-                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
-                            </li>
-                            <li><a href="blog-item.html">Editar perfil</a></li>
+            <li><a href="reviews.html"><div class="cat"><i class="watching"></i><i class="watching1"></i></div></a></li>
+            <li><a href="404.html"><div class="bk"><i class="booking"></i><i class="booking1"></i></div></a></li>
+            <li><a href="contact.html"><div class="cnt"><i class="contact"></i><i class="contact1"></i></div></a></li>
 
-                        </ul>
-                    </li>
+        </ul>
+    </div>
+    <div class="main">
 
-                @endif
+            <div class="top-header">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png" alt="" /></a>
+                    <p>Movie Theater</p>
+                </div>
+                <div class="search">
+                    <form>
+                        <input type="text" value="Search.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search..';}"/>
+                        <input type="submit" value="">
+                    </form>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+            @yield('contenido')
 
 
+        <div class="review-slider">
+            <ul id="flexiselDemo1">
+                <li><img src="images/r1.jpg" alt=""/></li>
+                <li><img src="images/r2.jpg" alt=""/></li>
+                <li><img src="images/r3.jpg" alt=""/></li>
+                <li><img src="images/r4.jpg" alt=""/></li>
+                <li><img src="images/r5.jpg" alt=""/></li>
+                <li><img src="images/r6.jpg" alt=""/></li>
             </ul>
+            <script type="text/javascript">
+                $(window).load(function() {
+
+                    $("#flexiselDemo1").flexisel({
+                        visibleItems: 6,
+                        animationSpeed: 1000,
+                        autoPlay: true,
+                        autoPlaySpeed: 3000,
+                        pauseOnHover: false,
+                        enableResponsiveBreakpoints: true,
+                        responsiveBreakpoints: {
+                            portrait: {
+                                changePoint:480,
+                                visibleItems: 2
+                            },
+                            landscape: {
+                                changePoint:640,
+                                visibleItems: 3
+                            },
+                            tablet: {
+                                changePoint:768,
+                                visibleItems: 4
+                            }
+                        }
+                    });
+                });
+            </script>
+           <!-- <script type="text/javascript" src="js/jquery.flexisel.js"></script>-->
+            <script type="text/javascript" src="{{ URL::asset('js/jquery.flexisel.js') }}"></script>
+        </div>
+        <div class="video">
+            <iframe  src="https://www.youtube.com/embed/2LqzF5WauAw" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="news">
+            <div class="col-md-6 news-left-grid">
+                <h3>Don’t be late,</h3>
+                <h2>Book your ticket now!</h2>
+                <h4>Easy, simple & fast.</h4>
+                <a href="#"><i class="book"></i>BOOK TICKET</a>
+                <p>Get Discount up to <strong>10%</strong> if you are a member!</p>
+            </div>
+            <div class="col-md-6 news-right-grid">
+                <h3>News</h3>
+                <div class="news-grid">
+                    <h5>Lorem Ipsum Dolor Sit Amet</h5>
+                    <label>Nov 11 2014</label>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                </div>
+                <div class="news-grid">
+                    <h5>Lorem Ipsum Dolor Sit Amet</h5>
+                    <label>Nov 11 2014</label>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                </div>
+                <a class="more" href="#">MORE</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="more-reviews">
+            <ul id="flexiselDemo2">
+                <li><img src="images/m1.jpg" alt=""/></li>
+                <li><img src="images/m2.jpg" alt=""/></li>
+                <li><img src="images/m3.jpg" alt=""/></li>
+                <li><img src="images/m4.jpg" alt=""/></li>
+            </ul>
+            <script type="text/javascript">
+                $(window).load(function() {
+
+                    $("#flexiselDemo2").flexisel({
+                        visibleItems: 4,
+                        animationSpeed: 1000,
+                        autoPlay: true,
+                        autoPlaySpeed: 3000,
+                        pauseOnHover: false,
+                        enableResponsiveBreakpoints: true,
+                        responsiveBreakpoints: {
+                            portrait: {
+                                changePoint:480,
+                                visibleItems: 2
+                            },
+                            landscape: {
+                                changePoint:640,
+                                visibleItems: 3
+                            },
+                            tablet: {
+                                changePoint:768,
+                                visibleItems: 3
+                            }
+                        }
+                    });
+                });
+            </script>
+            <!-- <script type="text/javascript" src="js/jquery.flexisel.js"></script>-->
+            <script type="text/javascript" src="{{ URL::asset('js/jquery.flexisel.js') }}"></script>
+        </div>
+        <div class="footer">
+            <h6>Disclaimer : </h6>
+            <p class="claim">This is a freebies and not an official website, I have no intention of disclose any movie, brand, news.My goal here is to train or excercise my skill and share this freebies.</p>
+            <a href="example@mail.com">example@mail.com</a>
+            <div class="copyright">
+                <p> Template by  <a href="http://w3layouts.com">  W3layouts</a></p>
+            </div>
         </div>
     </div>
-</header><!--/header-->
-
-
-
-
-@yield('contenido')
-
-
-
-
-<footer id="footer" class="midnight-blue">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                &copy; 2013 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>. All Rights Reserved.
-            </div>
-            <div class="col-sm-6">
-                <ul class="pull-right">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Faq</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a id="gototop" class="gototop" href="#"><i class="icon-chevron-up"></i></a></li><!--#gototop-->
-                </ul>
-            </div>
-        </div>
-    </div>
-</footer><!--/#footer-->
-
-<!--<script src="js/jquery.js"></script>-->
-<script type="text/javascript" src="{{ URL::asset('js/jquery.js') }}"></script>
-
-<!--<script src="js/bootstrap.min.js"></script>-->
-<script type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
-
-<!--<script src="js/jquery.prettyPhoto.js"></script>-->
-<script type="text/javascript" src="{{ URL::asset('js/jquery.prettyPhoto.js') }}"></script>
-
-<!--<script src="js/main.js"></script>-->
-<script type="text/javascript" src="{{ URL::asset('js/main.js') }}"></script>
+</div>
+<div class="clearfix"></div>
 </body>
 </html>

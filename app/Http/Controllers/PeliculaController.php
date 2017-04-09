@@ -17,7 +17,7 @@ class PeliculaController extends Controller
     public function index()
     {
 
-        $peliculas = Pelicula::paginate(5);
+        $peliculas = Pelicula::paginate(3);
         return view('peliculas.list',compact('peliculas'));
 
 
@@ -124,5 +124,12 @@ class PeliculaController extends Controller
         $pelicula = Pelicula::find($id);
         $pelicula->delete();
         return redirect('/pelicula');
+    }
+
+    public function Cartelera(){
+
+        $peliculas = Pelicula::paginate(3);
+        return view('peliculas.cartelera',compact('peliculas'));
+
     }
 }

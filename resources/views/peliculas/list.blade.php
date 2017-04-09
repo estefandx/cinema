@@ -1,61 +1,46 @@
-@extends('layouts.master')
+@extends('layouts.admin')
 
-@section('contenido')
-    <section id="title" class="emerald">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <h1>Peliculas</h1>
-                    <p>Disfruta de las mejores peliculas y mira sus horarios y funciones</p>
-                </div>
-                <div class="col-sm-6">
-                    <ul class="breadcrumb pull-right">
-                        <li><a href="{{ url('/') }}">Home</a></li>
+@section('contenido_admin')
 
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section><!--/#title-->
 
 
 
     <section id="recent-works">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-9">
-                    @foreach($peliculas as $pelicula)
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <img  src= "peliculas/{{$pelicula->url_imagen}}" alt="Generic placeholder image" width="200" height="260">
-                        </div><!-- /.col-lg-12 -->
-                        <div class="col-lg-8">
+            <p><a class="btn btn-info" href="{{ url("/pelicula/create")}}" role="button">Crear pelicula </a></p>
+            <table class="table table-bordered table-responsive">
+                <thead>
+                <tr>
+                    <th>nombre</th>
+                    <th>sinopsis</th>
+                    <th>genero</th>
+                    <th>duracion</th>
+                    <th>imagen</th>
+                    <th>acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($peliculas as $pelicula)
+                <tr>
+                    <td>{{$pelicula->nombre}}</td>
+                    <td>{{$pelicula->sinopsis}}</td>
+                    <td>{{$pelicula->Genero->descripcion}}</td>
+                    <td>{{$pelicula->duracion}}</td>
+                    <td><img  src= "peliculas/{{$pelicula->url_imagen}}" alt="Generic placeholder image" width="200" height="260"></td>
+                    <td>
+                        <p><a class="btn btn-default" href="{{ url("/pelicula/{$pelicula->pelicula_id}/edit")}}" role="button">editar </a></p>
+                        <form  role="form"  method="post" action="{{ url("/pelicula/{$pelicula->pelicula_id}") }}">
+                            {{ method_field('delete') }}
+                            {{ csrf_field() }}
 
-                            <h2>{{$pelicula->nombre}}</h2>
-                            <p>{{$pelicula->sinopsis}}</p>
-                            <p><strong>Genero: </strong>{{$pelicula->Genero->descripcion}}</p>
-                            <p><strong>Duración: </strong>{{$pelicula->duracion}} minutos</p>
-                            <p><a class="btn btn-default" href="#" role="button">Ver Funciones </a></p>
-                            <p><a class="btn btn-default" href="{{ url("/pelicula/{$pelicula->pelicula_id}/edit")}}" role="button">editar </a></p>
-                            <form  role="form"  method="post" action="{{ url("/pelicula/{$pelicula->pelicula_id}") }}">
-                                {{ method_field('delete') }}
-                                {{ csrf_field() }}
-
-                                <input class="btn btn-danger" type="submit" value="eliminar" />
-                            </form>
-
-                        </div><!-- /.col-lg-12 -->
-                    </div><!-- /.row -->
-                    @endforeach
-                        <center>{!!  $peliculas->render() !!}</center>
-
-                </div>
-                <div class="col-lg-3">
-                    <div class="block-section-body">
-                        <strong>Sala 2D</strong><br>Lunes (no festivos): $ 9.300<br>Martes y Jueves (no festivos): $ 7.800<br>Miércoles (no festivos): $ 5.500<br>Viernes a Domingo y Festivos: $ 11.300<br>Niños menores de 12 años y adultos mayores de 60 años: $ 9.300<br>Personas en condición de discapacidad: $ 8.400<br><br><strong>Sala 2D</strong> - <em>Tarjeta Elite Gold</em><br>Todos los días (excepto Miércoles) antes de las 5:00 pm: $ 5.500<br>Todos los días (excepto Miércoles) después de las 5:00 pm: $ 6.400<br><br><strong>Sala 2D-XD</strong><br>Lunes (no festivos): $ 11.200<br>Martes y Jueves (no festivos): $ 9.700<br>Miércoles (no festivos): $ 7.400<br>Viernes a Domingo y Festivos: $ 13.200<br>Niños menores de 12 años y adultos mayores de 60 años: $ 11.200<br>Personas en condición de discapacidad: $ 9.800<br><br><strong>Sala 2D-XD</strong> - <em>Tarjeta Elite Gold</em><br>Todos los días (excepto Miércoles) antes de las 5:00 pm: $ 6.500<br>Todos los días (excepto Miércoles) después de las 5:00 pm: $ 9.200<br><br><strong>Sala 3D</strong><br>Lunes (no festivos): $ 13.300<br>Martes y Jueves (no festivos): $ 11.300<br>Miércoles (no festivos): $ 7.500<br>Viernes a Domingo y Festivos: $ 16.300<br>Niños menores de 12 años y adultos mayores de 60 años: $ 13.200<br>Personas en condición de discapacidad: $ 12.100<br><br><strong>Sala 3D</strong> - <em>Tarjeta Elite Gold</em><br>Todos los días (excepto Miércoles) antes de las 5:00 pm: $ 8.000<br>Todos los días (excepto Miércoles) después de las 5:00 pm: $ 10.600<br><br><strong>Sala 3D-XD</strong><br>Lunes (no festivos): $ 15.300<br>Martes y Jueves (no festivos): $ 12.800<br>Miércoles (no festivos): $ 9.000<br>Viernes a Domingo y Festivos: $ 18.300<br>Niños menores de 12 años y adultos mayores de 60 años: $ 15.300<br>Personas en condición de discapacidad: $ 13.600<br><br><strong>Sala 3D-XD</strong> - <em>Tarjeta Elite Gold</em><br>Todos los días (excepto Miércoles) antes de las 5:00 pm: $ 9.000<br>Todos los días (excepto Miércoles) después de las 5:00 pm: $ 12.300
-                    </div>
-                </div>
-            </div>
-        </div>
+                            <input class="btn btn-danger" type="submit" value="eliminar" />
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
+                </tbody>
+            </table>
+            <center>{!!  $peliculas->render() !!}</center>
+        </div> <!-- div del conteiner -->
     </section><!--/#recent-works-->
 @endsection

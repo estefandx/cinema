@@ -21,3 +21,14 @@ Auth::routes();
 Route::resource('pelicula', 'PeliculaController');
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/cartelera', 'PeliculaController@cartelera');
+
+
+
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('/', 'AdminController@index');
+    Route::get('accounts', 'AccountController@index');
+    Route::post('dashboard', 'DashboardController@index');
+});
+
