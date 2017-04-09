@@ -27,7 +27,7 @@
                     @foreach($peliculas as $pelicula)
                     <div class="row">
                         <div class="col-lg-4">
-                            <img  src="peliculas/{{$pelicula->url_imagen}}" alt="Generic placeholder image" width="200" height="260">
+                            <img  src= "peliculas/{{$pelicula->url_imagen}}" alt="Generic placeholder image" width="200" height="260">
                         </div><!-- /.col-lg-12 -->
                         <div class="col-lg-8">
 
@@ -35,7 +35,15 @@
                             <p>{{$pelicula->sinopsis}}</p>
                             <p><strong>Genero: </strong>{{$pelicula->Genero->descripcion}}</p>
                             <p><strong>Duración: </strong>{{$pelicula->duracion}} minutos</p>
-                            <p><a class="btn btn-default" href="#" role="button">Ver Funciones &raquo;</a></p>
+                            <p><a class="btn btn-default" href="#" role="button">Ver Funciones </a></p>
+                            <p><a class="btn btn-default" href="{{ url("/pelicula/{$pelicula->pelicula_id}/edit")}}" role="button">editar </a></p>
+                            <form  role="form"  method="post" action="{{ url("/pelicula/{$pelicula->pelicula_id}") }}">
+                                {{ method_field('delete') }}
+                                {{ csrf_field() }}
+
+                                <input class="btn btn-danger" type="submit" value="eliminar" />
+                            </form>
+
                         </div><!-- /.col-lg-12 -->
                     </div><!-- /.row -->
                     @endforeach

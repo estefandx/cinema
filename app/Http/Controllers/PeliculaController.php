@@ -56,7 +56,7 @@ class PeliculaController extends Controller
             'genero_id' => $request['genero_id'],
         ]);
 
-        redirect('/pelicula');
+        return redirect('/pelicula');
     }
 
     /**
@@ -78,7 +78,9 @@ class PeliculaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pelicula = Pelicula::find($id);
+        $generos = Genero::all();
+        return view('peliculas.edit',compact('pelicula','generos'));
     }
 
     /**
@@ -90,7 +92,25 @@ class PeliculaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pelicula = Pelicula::find($id);
+
+        $file = Input::file('imagen');
+        if (isset($file)){
+            $aleatorio = str_random(10);
+            $nombre = $aleatorio.$file->getClientOriginalName();
+            //$file->move('peliculas',$nombre);
+            \Storage::disk('local')->put($nombre,  \File::get($file));
+            \Storage::disk('local')->delete($pelicula->url_imagen);
+            $pelicula->url_imagen = $nombre;
+
+        }
+
+        $pelicula->nombre = $request['nombre'];
+        $pelicula->sinopsis = $request['sinopsis'];
+        $pelicula->duracion = $request['duracion'];
+        $pelicula->genero_id = $request['genero_id'];
+        $pelicula->save();
+        return redirect('/pelicula');
     }
 
     /**
@@ -101,6 +121,8 @@ class PeliculaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pelicula = Pelicula::find($id);
+        $pelicula->delete();
+        return redirect('/pelicula');
     }
 }
